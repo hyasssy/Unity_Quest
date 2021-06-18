@@ -1,0 +1,35 @@
+開発メモ
+
+
+
+▼UniTask使い方メモまとめサイト (実際の用法が羅列)
+https://baba-s.hatenablog.com/entry/2019/09/11/083000#%E5%B0%8E%E5%85%A5%E6%96%B9%E6%B3%95
+
+▼UniRx 簡単な用法サイト
+https://kan-kikuchi.hatenablog.com/entry/What_is_UniRx#UniRx%E3%81%A8%E3%81%AF
+
+▼Oculus
+・Canvasまわり
+WorldSpaceになるので、Scaleを1にするのを忘れない。
+EventSystem
+Standalone Input Moduleの代わりにOVR Input Moduleがアタッチされている
+Ray Transform(Rayを飛ばす原点)はUIHelpersについているHandedInputSelectorが上書きする設定になっているため、必要であれば書き換える
+LaserPointer
+OVRCursorを継承したクラスを持ち、OVR Input Moduleから参照されている
+CursorVirualでカーソルとして使用するオブジェクトを指定可能
+カーソルまでの線を描画したい場合はLine Rendererをenableにする
+Sphere
+LaserPointerでCursor表示用に参照されている
+https://qiita.com/nkjzm/items/8a62cfab348eacff9167
+・OVRPlugin.csのNull問題
+https://forums.oculusvr.com/developer/discussion/77966/nullreferenceexception-from-oculus-package
+・Dllエラーについて。結局わからん。MacではXR Plugin ManagementのOculusは切って開発する。
+
+▼Build
+・PackageNameを気を付けないと、署名がダブってますエラーが出る。
+・OculusIntegrationがクソで、AndroidSDKの名前がかぶっていたりする。前回の解決法は、Universalのほうを削除した。
+
+
+▼DebugLogPanel表示
+コンソールをシーン上でも表示するようにしています。
+ボタン１、ボタン２を押しながらサムスティック押し込みでパネル表示/非表示
